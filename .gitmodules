@@ -1,0 +1,6 @@
+[submodule "support/JSV"]
+	path = support/JSV
+	url = https://github.com/garycourt/JSV.git
+[submodule "support/node-validator"]
+	path = support/node-validator
+	url = https://github.com/chriso/node-validator.git
