@@ -9,15 +9,13 @@ module.exports = {
   'cleanObject()': function() {
     var schema = { filter: f.cleanObject(), properties: { a: {} } };
     var report = validate({ c: 5, a: 1, b: 2 }, schema);
-    var instance = report.instance.getValue();
-    assert.deepEqual(instance, { a: 1 });
+    assert.deepEqual(report.instance, { a: 1 });
   },
 
   'cleanArray()': function() {
     var schema = { filter: f.cleanArray(), items: [{}, {}] };
     var report = validate([1, 2, 3, 4], schema);
-    var instance = report.instance.getValue();
-    assert.deepEqual(instance, [1, 2]);
+    assert.deepEqual(report.instance, [1, 2]);
   },
 
   /**
@@ -88,7 +86,7 @@ module.exports = {
 var transforms = function(schema, before, after) {
   var report = validate(before, schema);
   report.errors.length.should.equal(0);
-  report.instance.getValue().should.equal(after);
+  report.instance.should.equal(after);
 };
 
 var fails = function(schema, value) {

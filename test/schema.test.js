@@ -9,10 +9,11 @@ module.exports = {
     var report = validate(NaN, {type: 'number'});
     report.errors.length.should.equal(1);
   },
+
   'Filter can transform instance before validation': function() {
     var schema = {type: 'number', filter: function(value) { return parseInt(value, 10); }};
     var report = validate("5", schema);
     report.errors.length.should.equal(0);
-    report.instance.getValue().should.equal(5);
+    report.instance.should.equal(5);
   },
 };
