@@ -5,6 +5,21 @@ var contracts = require('contracts')
   , should = require('should');
 
 module.exports = {
+
+  'skipExtraProps()': function() {
+    var schema = { filter: f.skipExtraProps(), properties: { a: {} } };
+    var report = validate({ c: 5, a: 1, b: 2 }, schema);
+    var instance = report.instance.getValue();
+    assert.deepEqual(instance, { a: 1 });
+  },
+
+  'skipExtraItems()': function() {
+    var schema = { filter: f.skipExtraItems(), items: [{}, {}] };
+    var report = validate([1, 2, 3, 4], schema);
+    var instance = report.instance.getValue();
+    assert.deepEqual(instance, [1, 2]);
+  },
+
   /**
    * Test filters inherited from node-validator library.
    */
