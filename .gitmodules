@@ -4,3 +4,15 @@
 [submodule "support/node-validator"]
 	path = support/node-validator
 	url = https://github.com/chriso/node-validator.git
+[submodule "support/expresso"]
+	path = support/expresso
+	url = https://github.com/visionmedia/expresso
+[submodule "should.js"]
+	path = should.js
+	url = https://github.com/visionmedia/should.js
+[submodule "support/should"]
+	path = support/should
+	url = https://github.com/visionmedia/should.js
+[submodule "support/validator"]
+	path = support/validator
+	url = https://github.com/chriso/node-validator.git
