@@ -5,7 +5,7 @@
   "keywords"      : ["json schema", "schema", "data", "validation", "express"],
   "author"        : "Eirikur Nilsson <eirikur@nilsson.is>",
   "url"           : "http://github.com/eirikurn/contracts/",
-  "dependencies"  : { "node-validator": "> 0.2.0" },
+  "dependencies"  : { "validator": "> 0.2.0" },
   "main"          : "index",
   "engines"       : { "node": ">= 0.4.1" }
 }
