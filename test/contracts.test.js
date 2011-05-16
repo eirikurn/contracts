@@ -10,7 +10,7 @@ module.exports = {
     var report = c.validate("foo", { type: 'string' });
     report.errors.length.should.equal(0);
     report.instance.should.equal("foo");
-  }
+  },
 
   'transform()': function() {
     var report = c.transform("5", { filter: f.toInt() });
@@ -31,13 +31,13 @@ module.exports = {
     var schema = { filter: f.toInt(), type: 'integer' };
     var viewMiddleware = c.view(schema);
 
-    req = {params: '5'};
+    req = {body: '5'};
     called = false;
     viewMiddleware(req, {}, function() { called = true; });
     called.should.be.true;
     req.data.should.equal(5);
 
-    req = {params: 'foobar'};
+    req = {body: 'foobar'};
     called = false;
     viewMiddleware(req, {}, function(error) {
       error.should.be.an.instanceof(c.ValidationError);
