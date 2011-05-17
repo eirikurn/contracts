@@ -26,4 +26,9 @@ module.exports = {
     report.errors.length.should.equal(1);
     report.errors[0].attribute.should.equal('type');
   },
+
+  'Possible to preparse schema': function() {
+    var schema = contracts.schema({ type: "string" });
+    validate(5, schema).errors.length.should.equal(1);
+  },
 };
