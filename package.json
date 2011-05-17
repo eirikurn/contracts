@@ -1,6 +1,6 @@
 {
   "name"          : "contracts",
-  "version"       : "0.1.0",
+  "version"       : "0.2.0",
   "description"   : "Validation library to define and validate JSON Schemas for functions and express handlers. Supports filters.",
   "keywords"      : ["json schema", "schema", "data", "validation", "express"],
   "author"        : "Eirikur Nilsson <eirikur@nilsson.is>",
