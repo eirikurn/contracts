@@ -16,4 +16,14 @@ module.exports = {
     report.errors.length.should.equal(0);
     report.instance.should.equal(5);
   },
+
+  'Possible to register and reference schemas': function() {
+    contracts.schema({
+      "id": "test",
+      "type": "string"
+    });
+    var report = validate(5, {$ref: "test"});
+    report.errors.length.should.equal(1);
+    report.errors[0].attribute.should.equal('type');
+  },
 };
