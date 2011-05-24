@@ -31,4 +31,19 @@ module.exports = {
     var schema = contracts.schema({ type: "string" });
     validate(5, schema).errors.length.should.equal(1);
   },
+
+  'Filters do not affect original instance': function() {
+    var schema =
+      { type: 'object'
+      , properties: 
+        { a:
+          { type: 'number'
+          , filter: function(value) { return parseInt(value, 10); }
+          }
+        }
+      };
+    var original = { a: "5" };
+    var report = validate(original, schema);
+    original.a.should.equal("5");
+  },
 };
