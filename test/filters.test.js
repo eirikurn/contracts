@@ -18,6 +18,13 @@ module.exports = {
     assert.deepEqual(report.instance, [1, 2]);
   },
 
+  'removeEmpty()': function() {
+    var schema = { filter: f.removeEmpty() };
+    transforms(schema, "a", "a");
+    transforms(schema, "", null);
+    transforms(schema, null, null);
+  },
+
   /**
    * Test filters inherited from node-validator library.
    */
@@ -86,7 +93,7 @@ module.exports = {
 var transforms = function(schema, before, after) {
   var report = validate(before, schema);
   report.errors.length.should.equal(0);
-  report.instance.should.equal(after);
+  should.equal(after, report.instance);
 };
 
 var fails = function(schema, value) {
