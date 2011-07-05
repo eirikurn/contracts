@@ -1,4 +1,10 @@
 
+0.2.1 / 2011-07-05
+==================
+
+  * Added removeEmpty filter that removes empty properties before validation, useful for validating optional form inputs
+  * Tweaked ValidationError, added toString()
+
 0.2.0 / 2011-05-17
 ==================
 
