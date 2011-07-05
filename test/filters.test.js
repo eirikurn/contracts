@@ -21,8 +21,15 @@ module.exports = {
   'removeEmpty()': function() {
     var schema = { filter: f.removeEmpty() };
     transforms(schema, "a", "a");
-    transforms(schema, "", null);
-    transforms(schema, null, null);
+    transforms(schema, "", undefined);
+    transforms(schema, null, undefined);
+  },
+
+  'removeEmpty() removes property from instance': function() {
+    var schema = { properties: { a: { filter: f.removeEmpty() } } };
+    transforms(schema, {a: "a"}, {a: "a"});
+    transforms(schema, {a: ""}, {});
+    transforms(schema, {a: null}, {});
   },
 
   /**
@@ -93,7 +100,7 @@ module.exports = {
 var transforms = function(schema, before, after) {
   var report = validate(before, schema);
   report.errors.length.should.equal(0);
-  should.equal(after, report.instance);
+  should.deepEqual(after, report.instance);
 };
 
 var fails = function(schema, value) {
