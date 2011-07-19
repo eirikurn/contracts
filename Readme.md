@@ -92,30 +92,30 @@ From node-validator:
 
 ## Custom filters
 
-   var schema = {
-     type: 'string',
-     filter: function(str) {
-       return str.replace(/-/g, '');
-     }
-   }
+    var schema = {
+      type: 'string',
+      filter: function(str) {
+        return str.replace(/-/g, '');
+      }
+    }
 
-   contracts.filters.add('stripSlashes', function(str) { return str.replace(/-/g, ''); });
-   schema = {
-     type: 'string',
-     filter: contracts.filters.stripSlashes().trim()
-   }
+    contracts.filters.add('stripSlashes', function(str) { return str.replace(/-/g, ''); });
+    schema = {
+      type: 'string',
+      filter: contracts.filters.stripSlashes().trim()
+    }
 
 ## Custom formats
 
-   contracts.formats.add('ssn', function(str) {
-     // TODO: Validate that str is a ssn.
-     return true;
-   });
+    contracts.formats.add('ssn', function(str) {
+      // TODO: Validate that str is a ssn.
+      return true;
+    });
 
-   var schema = {
-     type: 'string',
-     format: 'ssn'
-   }
+    var schema = {
+      type: 'string',
+      format: 'ssn'
+    }
 
 ## License 
 
