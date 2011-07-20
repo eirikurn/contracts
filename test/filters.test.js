@@ -26,10 +26,13 @@ module.exports = {
   },
 
   'removeEmpty() removes property from instance': function() {
-    var schema = { properties: { a: { filter: f.removeEmpty() } } };
+    var schema = { properties: { a: { filter: f.removeEmpty() } }, items: { filter: f.removeEmpty() } };
     transforms(schema, {a: "a"}, {a: "a"});
     transforms(schema, {a: ""}, {});
     transforms(schema, {a: null}, {});
+    transforms(schema, ['a'], ['a']);
+    transforms(schema, [''], []);
+    transforms(schema, [null], []);
   },
 
   /**
