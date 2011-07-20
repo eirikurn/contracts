@@ -1,4 +1,11 @@
 
+0.3.0 / 2011-07-20
+==================
+
+  * Added format validators.
+  * Fixed a case where filters remove an instance in an array.
+  * Added docs
+
 0.2.1 / 2011-07-05
 ==================
 
