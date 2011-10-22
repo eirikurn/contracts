@@ -2,6 +2,12 @@
 0.3.0 / 2011-07-20
 ==================
 
+  * Fixed for changes in validator library
+  * Made validator dependency stricter
+
+0.3.0 / 2011-07-20
+==================
+
   * Added format validators.
   * Fixed a case where filters remove an instance in an array.
   * Added docs
