@@ -1,3 +1,4 @@
 .DS_Store
 *.sock
 *.swp
+node_modules
