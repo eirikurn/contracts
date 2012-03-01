@@ -1,3 +1,7 @@
+0.3.2 / 2012-03-01
+==================
+
+  * Fixed format validator support so it can be modified at run-time
 
 0.3.0 / 2011-07-20
 ==================
