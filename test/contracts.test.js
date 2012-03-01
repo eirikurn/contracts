@@ -1,4 +1,4 @@
-var c = require('contracts')
+var c = require('../')
   , f = c.filters
   , assert = require('assert')
   , should = require('should');

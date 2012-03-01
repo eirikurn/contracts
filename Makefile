@@ -1,10 +1,6 @@
 test:
-	@NODE_ENV=test ./support/expresso/bin/expresso \
-		-I lib \
-		-I support \
-		-I support/JSV/lib \
-		$(TESTFLAGS) \
-		test/*.test.js
+	@NODE_ENV=test ./node_modules/expresso/bin/expresso \
+		$(TESTFLAGS)
 
 test-cov:
 	@TESTFLAGS=--cov $(MAKE) test

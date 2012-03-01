@@ -1,4 +1,4 @@
-var contracts = require('contracts')
+var contracts = require('../')
   , validate = contracts.validate
   , f = contracts.filters
   , assert = require('assert')
