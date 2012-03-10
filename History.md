@@ -1,3 +1,8 @@
+0.4.0 / 2012-03-10
+==================
+
+  * Expose format validators just as they can be reused
+
 0.3.2 / 2012-03-01
 ==================
 

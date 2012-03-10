@@ -34,6 +34,11 @@ module.exports = {
     succeeds({"format": "uuid"}, "550e8400-e29b-41d4-a716-446655440000");
   },
 
+  'formats are directly callable': function() {
+    should.exist(contracts.formats.email);
+    contracts.formats.email("some@email.com").should.equal(true);
+  },
+
   /**
    * Custom format
    */
